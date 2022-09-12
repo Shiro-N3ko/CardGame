@@ -13,6 +13,7 @@ namespace CardGame
         private List<Card>? theDeck { get; }
         private HelperClass? theHelper_;
 
+        //A constuctor to avoid the null reference of the Deck Object when called within the fromitself
         public Deck()
         {
             theDeck = new List<Card>();
@@ -31,11 +32,11 @@ namespace CardGame
         }//end addCard
 
         /*
-         * Method Name: shuffle
+         * Method Name: shuffleDeck
          * Method Purpose: Shuffles the deck
          */
 
-        public void shuffle()
+        public void shuffleDeck()
         {
             for (int i = 0; i < 209; i++) //Statitically Allows all cards to move 4 times
             {
@@ -46,6 +47,11 @@ namespace CardGame
                 theDeck?.Add(aCardCopy);
             }
         }//end shuffle
+
+        /*
+         * Method Name: createDeck
+         * Method Purpose: Creates the deck
+         */
 
         public void createDeck()
         {
@@ -58,6 +64,18 @@ namespace CardGame
                     addCard(aCard);
                 }//end for value
             }//end for house
+        }
+
+        /*
+         * Method Name: resetDeck
+         * Method Purpose: Resets the deck
+         */
+
+        public void resetDeck()
+        {
+            theDeck.Clear();
+            createDeck();
+            shuffleDeck();
         }
 
         /*

@@ -29,7 +29,7 @@ namespace CardGame
 
         private void shuffleBtn_Click(object sender, EventArgs e)
         {
-            theDeck.shuffle();
+            theDeck.shuffleDeck();
             printList();
         }//end ClickShuffle
 
