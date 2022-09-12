@@ -23,10 +23,6 @@ namespace CardGame
 
         private void createDeckBtn_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 51; i++)
-            {
-                //Within Suite
-            }
         }
 
         private void shuffleBtn_Click(object sender, EventArgs e)

@@ -42,9 +42,8 @@ namespace CardGame
         }//end shuffle
 
         /*
-         * Method Name:
-         * Method Purpose:
-         *
+         * Method Name: getSize
+         * Method Purpose: return size of the List
          */
 
         public int getSize()
@@ -52,9 +51,15 @@ namespace CardGame
             return theDeck.Count();
         }//end getSize()
 
+        /*
+         * Method Name: getElement
+         * Method Purpose: return card from deck at given index
+         * Method Parmas: Index(int)
+         */
+
         public Card getElement(int i)
         {
             return theDeck.ElementAt(i);
-        }
+        }//end getElement
     }
 }
