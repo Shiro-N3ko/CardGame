@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CardGame
 {
-    public enum house
+    public enum House
     {
         Spade,
         Club,
@@ -16,7 +16,7 @@ namespace CardGame
 
     public class Card
     {
-        private Card(house house, string? value, string? colour)
+        private Card(House house, string? value, string? colour)
         {
             this.house = house;
             this.value = value;
@@ -24,9 +24,16 @@ namespace CardGame
             //this.spritePath = spritePath;
         }
 
-        private house house { get; }
+        private House house { get; }
         private string? value { get; }
         private string? colour { get; }
         private string? spritePath { get; set; }
+
+        public void printCard()
+        {
+            Console.WriteLine($"House:{this.house}\n" +
+                $"Value:{this.value}\n" +
+                $"Colour:{this.colour}\n");
+        }
     }
 }
