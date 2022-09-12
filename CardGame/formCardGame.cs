@@ -23,15 +23,22 @@ namespace CardGame
 
         private void createDeckBtn_Click(object sender, EventArgs e)
         {
+            theDeck.createDeck();
+            printList();
         }
 
         private void shuffleBtn_Click(object sender, EventArgs e)
         {
             theDeck.shuffle();
+            printList();
+        }//end ClickShuffle
+
+        private void printList()
+        {
             for (int i = 0; i < theDeck.getSize(); i++)
             {
                 theDeck.getElement(i).printCard();
             }//end for DeckSize
-        }//end ClickShuffle
+        }
     }
 }

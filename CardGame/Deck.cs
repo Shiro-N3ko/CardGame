@@ -10,8 +10,14 @@ namespace CardGame
 {
     public class Deck
     {
-        private List<Card?>? theDeck { get; }
+        private List<Card>? theDeck { get; }
         private HelperClass? theHelper_;
+
+        public Deck()
+        {
+            theDeck = new List<Card>();
+            theHelper_ = new HelperClass();
+        }
 
         /*
          * Method Name: addCard
@@ -33,13 +39,26 @@ namespace CardGame
         {
             for (int i = 0; i < 209; i++) //Statitically Allows all cards to move 4 times
             {
-                int aRandomCardIndex = theHelper_.getRandomNumBetween(1, 52);
+                int aRandomCardIndex = theHelper_.getRandomNumBetween(0, 51);
                 Card? aCardCopy;
                 aCardCopy = theDeck?.ElementAt(aRandomCardIndex);
                 theDeck?.Remove(aCardCopy);
                 theDeck?.Add(aCardCopy);
             }
         }//end shuffle
+
+        public void createDeck()
+        {
+            //Create Per Suit
+            for (int house = 0; house < 4; house++)
+            {
+                for (int value = 1; value < 14; value++)
+                {
+                    Card aCard = new Card(house, value);
+                    addCard(aCard);
+                }//end for value
+            }//end for house
+        }
 
         /*
          * Method Name: getSize

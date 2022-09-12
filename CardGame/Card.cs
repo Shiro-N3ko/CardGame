@@ -31,32 +31,23 @@ namespace CardGame
         King = 13
     }
 
-    public enum Colour
-    {
-        Black = 0,
-        Red = 1
-    }
-
     public class Card
     {
-        private Card(House house, Value value, Colour colour)
+        public Card(int house, int value)
         {
-            this.house = house;
-            this.value = value;
-            this.colour = colour;
+            this.house = (House)house;
+            this.value = (Value)value;
             //this.spritePath = spritePath;
         }
 
         private House house { get; }
         private Value value { get; }
-        private Colour colour { get; }
         private string? spritePath { get; set; }
 
         public void printCard()
         {
             Console.WriteLine($"House:{this.house}\n" +
-                $"Value:{this.value}\n" +
-                $"Colour:{this.colour}\n");
+                $"Value:{this.value}\n");
         }
     }
 }
