@@ -13,5 +13,10 @@ namespace CardGame
             playerHand = new List<Card>();
             theHelperClass = new HelperClass();
         }
+
+        public void addToPlayerHand(Card aCard_)
+        {
+            playerHand.Add(aCard_);
+        }
     }
 }
